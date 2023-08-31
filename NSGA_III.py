@@ -259,7 +259,7 @@ def main(npop, iter, lb, ub, nobj=3, pc=1, pm=1, eta_c=30, eta_m=20):
 
         # Step 2.1. Mating selection + crossover + mutation
         mating_pool = selection(pop, pc, rank)
-        off = crossover(mating_pool, lb, ub, pm, eta_c)
+        off = crossover(mating_pool, lb, ub, pc, eta_c)
         off = mutation(off, lb, ub, pm, eta_m)
         off_objs = cal_obj(off, nobj)
 
