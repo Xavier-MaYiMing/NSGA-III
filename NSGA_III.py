@@ -218,7 +218,7 @@ def environmental_selection(pop, objs, zmin, npop, V):
         I = np.where(np.bitwise_and(~choose, association[npop1:] == j))[0]
         if I.size > 0:
             if rho[j] == 0:
-                s = np.argmin(dis[npop1:][I])
+                s = np.argmin(dis[npop1 + I])
             else:
                 s = np.random.randint(I.size)
             choose[I[s]] = True
